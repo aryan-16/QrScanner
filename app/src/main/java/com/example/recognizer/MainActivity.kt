@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         if(isGranted){
             //start scanner
+           startScanner()
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,9 +30,16 @@ class MainActivity : AppCompatActivity() {
     private fun requestCameraAndStartScanner(){
         if(isPermissionGranted(cameraPermission)){
             // start Scanner
+           startScanner()
         }
         else{
             requestCameraPermission()
+        }
+    }
+
+    private fun startScanner(){
+        ScannerActivity.startScanner(this){
+
         }
     }
 
