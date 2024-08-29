@@ -26,7 +26,7 @@ inline fun Context.cameraPermissionRequest(crossinline positive : () -> Unit){
         }.show()
 }
 
-fun Context.onPermissionSetting(){
+fun Context.openPermissionSetting(){
     Intent(ACTION_APPLICATION_DETAILS_SETTINGS).also{
         val uri : Uri = Uri.fromParts("package" , packageName , null)
         it.data = uri
